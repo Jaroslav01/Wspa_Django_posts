@@ -28,12 +28,21 @@ SECRET_KEY = 'django-insecure-d*805^swtkrp-i3m)81rx-)5x^9yc0&c5(^evkmf$&lva2u*xu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'localhost:8080',
+    'localhost:8000',
+    'http://localhost:8080',
+    '127.0.0.1:8000',
+    '127.0.0.1:8080',
+    '127.0.0.1'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoProject3.urls'
@@ -132,6 +142,14 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
 }
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:8080',
+# ]
+# CSRF_TRUSTED_ORIGINS = [
+#     'http://localhost:8080',
+# ]
+CORS_ALLOW_ALL_ORIGINS = True
