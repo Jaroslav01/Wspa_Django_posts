@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-d*805^swtkrp-i3m)81rx-)5x^9yc0&c5(^evkmf$&lva2u*xu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# potrzebne do przepuszczania żądań z frontendu
 ALLOWED_HOSTS = [
     'localhost',
     'localhost:8080',
@@ -152,4 +153,6 @@ REST_FRAMEWORK = {
 # CSRF_TRUSTED_ORIGINS = [
 #     'http://localhost:8080',
 # ]
+
+# potrzebne do przepuszczania żądań z frontendu
 CORS_ALLOW_ALL_ORIGINS = True

@@ -1,16 +1,12 @@
 from django.db import models
 
-# Create your models here.
-from django.template.defaultfilters import slugify
-from django.urls import reverse
-
+# Tutaj przechowujemy modele danych, które zostaną przekonwertowane na tabele i możemy z nich korzystać w Serializer Aby tworzyć nowe rekordy, usuwać, zmieniać i odbierać
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.TextField()
-    # comments = models.ManyToManyField(Comment)
 
 class Comment(models.Model):
     author = models.TextField(default='')
